@@ -1,0 +1,34 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: creditcheck
+spec:
+  selector:
+    matchLabels:
+      app: creditcheck
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: creditcheck
+    spec:
+      containers:
+      - name: experian-app
+        image: experian-app
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 7080
+          protocol: TCP
+        env:
+        - name: JAEGER_SAMPLER_TYPE
+          value: const
+        - name: JAEGER_SAMPLER_PARAM
+          value: 1
+        - name: JAEGER_REPORTER_LOG_SPANS
+          value: true
+        - name: JAEGER_SAMPLER_MANAGER_HOST_PORT
+          value: jaeger-agent:5778
+        - name: JAEGER_AGENT_HOST
+          value: jaeger-agent
+        - name: JAEGER_AGENT_PORT
+          value: 6831
