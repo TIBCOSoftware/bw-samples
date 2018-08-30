@@ -1,0 +1,13 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/creditapp.module.Process-GetCreditDetail.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/creditapp.module.MainProcess-CreditDetails.json",
+            "type": "generated"
+        }
+    ]
+}

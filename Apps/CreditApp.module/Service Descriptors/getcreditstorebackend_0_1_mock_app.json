@@ -1,0 +1,109 @@
+{
+	"definitions": {
+		"GiveNewSchemaNameHere": {
+			"properties": {
+				"DOB": {
+					"default": "12/29/1984",
+					"type": "string"
+				},
+				"FirstName": {
+					"default": "Aditya",
+					"type": "string"
+				},
+				"LastName": {
+					"default": "Wagle",
+					"type": "string"
+				},
+				"SSN": {
+					"default": "123-45-6789",
+					"type": "string"
+				}
+			},
+			"type": "object"
+		},
+		"SuccessSchema": {
+			"properties": {
+				"FICOScore": {
+					"default": 800,
+					"type": "integer"
+				},
+				"NoOfInquiries": {
+					"default": 1,
+					"type": "integer"
+				},
+				"Rating": {
+					"default": "Excellent",
+					"type": "string"
+				}
+			},
+			"type": "object"
+		}
+	},
+	"info": {
+		"description": "Credit Store backend services",
+		"title": "GetCreditStoreBackend",
+		"version": "0.1",
+		"x-lastModified": "Aug 27, 2018 14:31PM PST"
+	},
+	"paths": {
+		"/creditscore": {
+			"post": {
+				"consumes": [
+					"application/json",
+					"application/xml"
+				],
+				"description": "Returns Credit Score",
+				"operationId": "postScore",
+				"parameters": [
+					{
+						"description": "Skip matching Inputs provided against record received from database",
+						"format": "",
+						"in": "query",
+						"name": "skipvalidation",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"description": "",
+						"in": "body",
+						"name": "body",
+						"schema": {
+							"$ref": "#/definitions/GiveNewSchemaNameHere"
+						}
+					}
+				],
+				"produces": [
+					"application/json",
+					"application/xml"
+				],
+				"responses": {
+					"200": {
+						"description": "Success response",
+						"examples": {
+							"application/json": {
+								"FICOScore": 800,
+								"NoOfInquiries": 1,
+								"Rating": "Excellent"
+							}
+						},
+						"schema": {
+							"$ref": "#/definitions/SuccessSchema"
+						}
+					},
+					"404": {
+						"description": "Record Not Found",
+						"schema": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"swagger": "2.0",
+	"host": "integration.cloud.tibcoapps.com:443",
+	"schemes": [
+		"https"
+	],
+	"basePath": "/y54cuadtcxtfstqs3rux2gfdaxppoqgc"
+}
