@@ -1,0 +1,58 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/getcreditdetail" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-getcreditdetail",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/GiveNewSchemaNameHere"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a GiveNewSchemaNameHere to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GiveNewSchemaNameHere"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "GiveNewSchemaNameHere" : {
+      "type" : "object",
+      "properties" : {
+        "DOB" : {
+          "type" : "string"
+        },
+        "FirstName" : {
+          "type" : "string"
+        },
+        "LastName" : {
+          "type" : "string"
+        },
+        "SSN" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
