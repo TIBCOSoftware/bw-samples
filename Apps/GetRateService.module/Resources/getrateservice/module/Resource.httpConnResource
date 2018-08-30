@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_nSix8avPEeimEaZSDSe7cA" name="getrateservice.module.Resource" type="httpconnector:HttpConnectorConfiguration">
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_nSix8qvPEeimEaZSDSe7cA" host="BW.HOST.NAME1 ">
+    <substitutionBindings xmi:id="_nSix86vPEeimEaZSDSe7cA" template="host" propName="GetRate_Service_Host"/>
+    <substitutionBindings xmi:id="_CRhuoKvVEeimEaZSDSe7cA" template="port" propName="GetRate_Port"/>
+  </jndi:configuration>
+</jndi:namedResource>

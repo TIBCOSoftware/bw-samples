@@ -1,0 +1,5 @@
+---
+applications:
+- memory: "512M"
+  timeout: "60"
+  name: "GetPropertyDetails.module"

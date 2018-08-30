@@ -1,0 +1,27 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [
+            {
+                "localTimestamp": 1535409537000,
+                "localURI": "/GetPropertyDetails.module/Service Descriptors/GetPropertyDetails_1.0.0.json",
+                "disabled": false,
+                "remoteTimestamp": 1535434454000,
+                "localHash": "52c295dbdf1216a7af979c659f1eb34005f8251e",
+                "remoteId": "5",
+                "remoteHash": "52c295dbdf1216a7af979c659f1eb34005f8251e"
+            },
+            {
+                "localTimestamp": 399,
+                "localURI": "/GetPropertyDetails.module/Service Descriptors/GetPropertyDetailsSpec_1.0.0.json",
+                "disabled": false,
+                "remoteTimestamp": 1535452459000,
+                "localHash": "1bc54b38c7b59e76a865b9b1d595cd2d5c32c388",
+                "remoteId": "9",
+                "remoteHash": "1bc54b38c7b59e76a865b9b1d595cd2d5c32c388"
+            }
+        ],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": []
+}
