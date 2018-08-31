@@ -27,9 +27,9 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "a SuccessSchema to be returned",
+            "description" : "a CreditScoreSuccessSchema to be returned",
             "schema" : {
-              "$ref" : "#/definitions/SuccessSchema"
+              "$ref" : "#/definitions/CreditScoreSuccessSchema"
             }
           }
         }
@@ -37,7 +37,7 @@
     }
   },
   "definitions" : {
-    "SuccessSchema" : {
+    "ExperianResponse" : {
       "type" : "object",
       "properties" : {
         "FICOScore" : {
@@ -64,6 +64,48 @@
           "type" : "string"
         },
         "SSN" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CreditScoreSuccessSchema" : {
+      "type" : "object",
+      "properties" : {
+        "EquifaxResponse" : {
+          "$ref" : "#/definitions/EquifaxResponse"
+        },
+        "ExperianResponse" : {
+          "$ref" : "#/definitions/ExperianResponse"
+        },
+        "TransUnionResponse" : {
+          "$ref" : "#/definitions/TransUnionResponse"
+        }
+      }
+    },
+    "TransUnionResponse" : {
+      "type" : "object",
+      "properties" : {
+        "FICOScore" : {
+          "type" : "integer"
+        },
+        "NoOfInquiries" : {
+          "type" : "integer"
+        },
+        "Rating" : {
+          "type" : "string"
+        }
+      }
+    },
+    "EquifaxResponse" : {
+      "type" : "object",
+      "properties" : {
+        "FICOScore" : {
+          "type" : "integer"
+        },
+        "NoOfInquiries" : {
+          "type" : "integer"
+        },
+        "Rating" : {
           "type" : "string"
         }
       }

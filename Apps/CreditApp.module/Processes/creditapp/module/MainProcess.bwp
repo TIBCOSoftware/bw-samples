@@ -7,6 +7,8 @@
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns0="http://xmlns.example.com/20180827160122PLT"
     xmlns:ns1="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"
+    xmlns:ns2="http://xmlns.example.com/Creditscore/parameters"
+    xmlns:ns3="http://tns.tibco.com/bw/json/1535671685533"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -193,7 +195,8 @@
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="postResponse">
-                <wsdl:part element="extns1:SuccessSchema" name="item" tibex:hasMultipleNamespaces="false"/>
+                <wsdl:part element="extns1:CreditScoreSuccessSchema"
+                    name="item" tibex:hasMultipleNamespaces="false"/>
             </wsdl:message>
             <wsdl:message name="post4XXFaultMessage">
                 <wsdl:part element="extns:client4XXError" name="clientError"/>
@@ -714,9 +717,13 @@
             namespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" prefix="tns"/>
         <tibex:namespaceItem
             namespace="http://xmlns.example.com/20180827160122PLT" prefix="tns1"/>
+        <tibex:namespaceItem
+            namespace="http://tns.tibco.com/bw/json/1535671685533" prefix="tns2"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/Creditscore/parameters"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1535671685533"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="creditdetails"
             partnerLinkType="ns0:partnerLinkType"
@@ -731,6 +738,10 @@
         <bpws:variable element="ns1:GiveNewSchemaNameHere"
             name="EquifaxScore-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:SuccessSchema" name="EquifaxScore" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:creditscorePostParameters"
+            name="ExperianScore-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ExperianResponseSchemaElement"
+            name="ExperianScore" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -764,35 +775,10 @@
                                 tibex:xpdlId="e7fb75be-1d87-4db0-a929-67b6322554c1" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20180827160122PLT&quot; xmlns:tns=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EquifaxScore&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:SuccessSchema>&#xa;            &lt;xsl:if test=&quot;$EquifaxScore/tns:FICOScore&quot;>&#xa;                &lt;tns:FICOScore>&#xa;                    &lt;xsl:value-of select=&quot;$EquifaxScore/tns:FICOScore&quot;/>&#xa;                &lt;/tns:FICOScore>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$EquifaxScore/tns:NoOfInquiries&quot;>&#xa;                &lt;tns:NoOfInquiries>&#xa;                    &lt;xsl:value-of select=&quot;$EquifaxScore/tns:NoOfInquiries&quot;/>&#xa;                &lt;/tns:NoOfInquiries>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$EquifaxScore/tns:Rating&quot;>&#xa;                &lt;tns:Rating>&#xa;                    &lt;xsl:value-of select=&quot;$EquifaxScore/tns:Rating&quot;/>&#xa;                &lt;/tns:Rating>&#xa;            &lt;/xsl:if>&#xa;        &lt;/tns:SuccessSchema>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20180827160122PLT&quot; xmlns:tns=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/json/1535671685533&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EquifaxScore&quot;/>&#xa;    &lt;xsl:param name=&quot;ExperianScore&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:CreditScoreSuccessSchema>&#xa;            &lt;tns:EquifaxResponse>&#xa;                &lt;xsl:if test=&quot;$EquifaxScore/tns:FICOScore&quot;>&#xa;                    &lt;tns:FICOScore>&#xa;                        &lt;xsl:value-of select=&quot;$EquifaxScore/tns:FICOScore&quot;/>&#xa;                    &lt;/tns:FICOScore>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$EquifaxScore/tns:NoOfInquiries&quot;>&#xa;                    &lt;tns:NoOfInquiries>&#xa;                        &lt;xsl:value-of select=&quot;$EquifaxScore/tns:NoOfInquiries&quot;/>&#xa;                    &lt;/tns:NoOfInquiries>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$EquifaxScore/tns:Rating&quot;>&#xa;                    &lt;tns:Rating>&#xa;                        &lt;xsl:value-of select=&quot;$EquifaxScore/tns:Rating&quot;/>&#xa;                    &lt;/tns:Rating>&#xa;                &lt;/xsl:if>&#xa;            &lt;/tns:EquifaxResponse>&#xa;            &lt;tns:ExperianResponse>&#xa;                &lt;xsl:if test=&quot;$ExperianScore/tns2:fiCOScore&quot;>&#xa;                    &lt;tns:FICOScore>&#xa;                        &lt;xsl:value-of select=&quot;$ExperianScore/tns2:fiCOScore&quot;/>&#xa;                    &lt;/tns:FICOScore>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ExperianScore/tns2:noOfInquiries&quot;>&#xa;                    &lt;tns:NoOfInquiries>&#xa;                        &lt;xsl:value-of select=&quot;$ExperianScore/tns2:noOfInquiries&quot;/>&#xa;                    &lt;/tns:NoOfInquiries>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ExperianScore/tns2:rating&quot;>&#xa;                    &lt;tns:Rating>&#xa;                        &lt;xsl:value-of select=&quot;$ExperianScore/tns2:rating&quot;/>&#xa;                    &lt;/tns:Rating>&#xa;                &lt;/xsl:if>&#xa;            &lt;/tns:ExperianResponse>&#xa;        &lt;/tns:CreditScoreSuccessSchema>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20180827160122PLT" xmlns:tns="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" version="2.0"&gt;
-    &lt;xsl:param name="EquifaxScore"/&gt;
-    &lt;xsl:template name="postOut-input" match="/"&gt;
-        &lt;tns1:postResponse&gt;
-            &lt;item&gt;
-                &lt;tns:SuccessSchema&gt;
-                    &lt;xsl:if test="$EquifaxScore/tns:FICOScore"&gt;
-                        &lt;tns:FICOScore&gt;
-                            &lt;xsl:value-of select="$EquifaxScore/tns:FICOScore"/&gt;
-                        &lt;/tns:FICOScore&gt;
-                    &lt;/xsl:if&gt;
-                    &lt;xsl:if test="$EquifaxScore/tns:NoOfInquiries"&gt;
-                        &lt;tns:NoOfInquiries&gt;
-                            &lt;xsl:value-of select="$EquifaxScore/tns:NoOfInquiries"/&gt;
-                        &lt;/tns:NoOfInquiries&gt;
-                    &lt;/xsl:if&gt;
-                    &lt;xsl:if test="$EquifaxScore/tns:Rating"&gt;
-                        &lt;tns:Rating&gt;
-                            &lt;xsl:value-of select="$EquifaxScore/tns:Rating"/&gt;
-                        &lt;/tns:Rating&gt;
-                    &lt;/xsl:if&gt;
-                &lt;/tns:SuccessSchema&gt;
-            &lt;/item&gt;
-        &lt;/tns1:postResponse&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20180827160122PLT" xmlns:tns="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" xmlns:tns2="http://tns.tibco.com/bw/json/1535671685533" version="2.0"&gt;&lt;xsl:param name="EquifaxScore"/&gt;&lt;xsl:param name="ExperianScore"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns1:postResponse&gt;&lt;item&gt;&lt;tns:CreditScoreSuccessSchema&gt;&lt;tns:EquifaxResponse&gt;&lt;xsl:if test="$EquifaxScore/tns:FICOScore"&gt;&lt;tns:FICOScore&gt;&lt;xsl:value-of select="$EquifaxScore/tns:FICOScore"/&gt;&lt;/tns:FICOScore&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$EquifaxScore/tns:NoOfInquiries"&gt;&lt;tns:NoOfInquiries&gt;&lt;xsl:value-of select="$EquifaxScore/tns:NoOfInquiries"/&gt;&lt;/tns:NoOfInquiries&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$EquifaxScore/tns:Rating"&gt;&lt;tns:Rating&gt;&lt;xsl:value-of select="$EquifaxScore/tns:Rating"/&gt;&lt;/tns:Rating&gt;&lt;/xsl:if&gt;&lt;/tns:EquifaxResponse&gt;&lt;tns:ExperianResponse&gt;&lt;xsl:if test="$ExperianScore/tns2:fiCOScore"&gt;&lt;tns:FICOScore&gt;&lt;xsl:value-of select="$ExperianScore/tns2:fiCOScore"/&gt;&lt;/tns:FICOScore&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$ExperianScore/tns2:noOfInquiries"&gt;&lt;tns:NoOfInquiries&gt;&lt;xsl:value-of select="$ExperianScore/tns2:noOfInquiries"/&gt;&lt;/tns:NoOfInquiries&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$ExperianScore/tns2:rating"&gt;&lt;tns:Rating&gt;&lt;xsl:value-of select="$ExperianScore/tns2:rating"/&gt;&lt;/tns:Rating&gt;&lt;/xsl:if&gt;&lt;/tns:ExperianResponse&gt;&lt;/tns:CreditScoreSuccessSchema&gt;&lt;/item&gt;&lt;/tns1:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="FICOScoreTopostOut"/>
                                     <bpws:target linkName="ExperianScoreTopostOut"/>
@@ -819,12 +805,21 @@
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
-                                <tibex:extActivity name="ExperianScore"
+                                <tibex:extActivity
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; xmlns:tns3=&quot;http://xmlns.example.com/Creditscore/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post&quot;/>&#xa;    &lt;xsl:template name=&quot;ExperianScore-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:creditscorePostParameters>&#xa;            &lt;xsl:if test=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:DOB&quot;>&#xa;                &lt;tns3:DOB>&#xa;                    &lt;xsl:value-of select=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:DOB&quot;/>&#xa;                &lt;/tns3:DOB>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:FirstName&quot;>&#xa;                &lt;tns3:FirstName>&#xa;                    &lt;xsl:value-of select=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:FirstName&quot;/>&#xa;                &lt;/tns3:FirstName>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:LastName&quot;>&#xa;                &lt;tns3:LastName>&#xa;                    &lt;xsl:value-of select=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:LastName&quot;/>&#xa;                &lt;/tns3:LastName>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:SSN&quot;>&#xa;                &lt;tns3:SSN>&#xa;                    &lt;xsl:value-of select=&quot;$post/item/tns:GiveNewSchemaNameHere/tns:SSN&quot;/>&#xa;                &lt;/tns3:SSN>&#xa;            &lt;/xsl:if>&#xa;        &lt;/tns3:creditscorePostParameters>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="ExperianScore-input"
+                                    name="ExperianScore"
+                                    outputVariable="ExperianScore"
                                     tibex:xpdlId="60f9be6a-f1aa-4e36-8a3d-08c0458e11ff"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:sources>
                                     <bpws:source linkName="ExperianScoreTopostOut"/>
                                     </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; xmlns:tns3=&quot;http://xmlns.example.com/Creditscore/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;ExperianScore-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:creditscorePostParameters>&#xa;            &lt;xsl:if test=&quot;$post.item/tns:DOB&quot;>&#xa;                &lt;tns3:DOB>&#xa;                    &lt;xsl:value-of select=&quot;$post.item/tns:DOB&quot;/>&#xa;                &lt;/tns3:DOB>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$post.item/tns:FirstName&quot;>&#xa;                &lt;tns3:FirstName>&#xa;                    &lt;xsl:value-of select=&quot;$post.item/tns:FirstName&quot;/>&#xa;                &lt;/tns3:FirstName>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$post.item/tns:LastName&quot;>&#xa;                &lt;tns3:LastName>&#xa;                    &lt;xsl:value-of select=&quot;$post.item/tns:LastName&quot;/>&#xa;                &lt;/tns3:LastName>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$post.item/tns:SSN&quot;>&#xa;                &lt;tns3:SSN>&#xa;                    &lt;xsl:value-of select=&quot;$post.item/tns:SSN&quot;/>&#xa;                &lt;/tns3:SSN>&#xa;            &lt;/xsl:if>&#xa;        &lt;/tns3:creditscorePostParameters>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="creditapp.module.ExperianScore" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
