@@ -23,12 +23,28 @@ spec:
         - name: JAEGER_SAMPLER_TYPE
           value: const
         - name: JAEGER_SAMPLER_PARAM
-          value: 1
+          value: "1"
         - name: JAEGER_REPORTER_LOG_SPANS
-          value: true
+          value: "true"
         - name: JAEGER_SAMPLER_MANAGER_HOST_PORT
           value: jaeger-agent:5778
         - name: JAEGER_AGENT_HOST
           value: jaeger-agent
         - name: JAEGER_AGENT_PORT
-          value: 6831
+          value: "6831"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: creditcheck
+  name: creditcheck
+spec:
+  ports:
+  - port: 7080
+    protocol: TCP
+    targetPort: 7080
+  selector:
+    app: creditcheck
+  sessionAffinity: None
+  type: NodePort

@@ -23,21 +23,6 @@ import com.tibco.utils.RandomScore;
 @Traced(operationName="getCreditScore")
 public class CreditScoreResource {
 
-	/**
-	 * Method handling HTTP GET requests. The returned object will be sent to
-	 * the client as "text/plain" media type.
-	 *
-	 * @return String that will be returned as a text/plain response.
-	 */
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public CreditScore getIt() {
-		Span childSpan = GlobalTracer.get().buildSpan("getCreditScore").start();
-		CreditScore returnValue = RandomScore.generate();
-		childSpan.finish();
-		return returnValue;
-	}
-
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -47,9 +32,35 @@ public class CreditScoreResource {
 		}
 
 		String ssn = request.getSSN();
-		//TODO Get Score based on SSN
+		CreditScore score = new CreditScore();
+		String lastCharSSN = ssn.substring(ssn.length()-1);
 
-		return RandomScore.generate();
+		switch (lastCharSSN){
+			case "0": 
+			score.setFiCOScore(200);
+			score.setNoOfInquiries(10);
+			score.setRating("POOR");
+			break;
+			case "4":
+			score.setFiCOScore(400);
+			score.setNoOfInquiries(8);
+			score.setRating("Average");
+			break;
+			case "6":
+			score.setFiCOScore(600);
+			score.setNoOfInquiries(4);
+			score.setRating("Good");
+			break;
+			case "9":
+			score.setFiCOScore(900);
+			score.setNoOfInquiries(2);
+			score.setRating("EXCELLENT");
+			break;
+			default:
+			System.out.println("Generating Random Reply");
+			score = RandomScore.generate();
+		}
+		return score;
 	}
 
 }

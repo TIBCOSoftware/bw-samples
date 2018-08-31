@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class CreditScore {
-	private Integer fiCOScore = null;
+	private Integer FICOScore = null;
 
 	private String rating = "Excellent";
 
-	private Integer noOfInquiries = null;
+	private Integer NoOfInquiries = null;
 
 	public CreditScore fiCOScore(Integer fiCOScore) {
-		this.fiCOScore = fiCOScore;
+		this.FICOScore = fiCOScore;
 		return this;
 	}
 
@@ -29,11 +29,11 @@ public class CreditScore {
 	 * @return fiCOScore
 	 **/
 	public Integer getFiCOScore() {
-		return fiCOScore;
+		return FICOScore;
 	}
 
 	public void setFiCOScore(Integer fiCOScore) {
-		this.fiCOScore = fiCOScore;
+		this.FICOScore = fiCOScore;
 	}
 
 	public CreditScore rating(String rating) {
@@ -55,7 +55,7 @@ public class CreditScore {
 	}
 
 	public CreditScore noOfInquiries(Integer noOfInquiries) {
-		this.noOfInquiries = noOfInquiries;
+		this.NoOfInquiries = noOfInquiries;
 		return this;
 	}
 
@@ -65,11 +65,11 @@ public class CreditScore {
 	 * @return noOfInquiries
 	 **/
 	public Integer getNoOfInquiries() {
-		return noOfInquiries;
+		return NoOfInquiries;
 	}
 
 	public void setNoOfInquiries(Integer noOfInquiries) {
-		this.noOfInquiries = noOfInquiries;
+		this.NoOfInquiries = noOfInquiries;
 	}
 
 	@Override
@@ -81,15 +81,15 @@ public class CreditScore {
 			return false;
 		}
 		CreditScore creditScore = (CreditScore) o;
-		return Objects.equals(this.fiCOScore, creditScore.fiCOScore)
+		return Objects.equals(this.FICOScore, creditScore.FICOScore)
 				&& Objects.equals(this.rating, creditScore.rating)
 				&& Objects
-						.equals(this.noOfInquiries, creditScore.noOfInquiries);
+						.equals(this.NoOfInquiries, creditScore.NoOfInquiries);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(fiCOScore, rating, noOfInquiries);
+		return Objects.hash(FICOScore, rating, NoOfInquiries);
 	}
 
 	@Override
@@ -97,11 +97,11 @@ public class CreditScore {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class CreditScore {\n");
 
-		sb.append("    fiCOScore: ").append(toIndentedString(fiCOScore))
+		sb.append("    fiCOScore: ").append(toIndentedString(FICOScore))
 				.append("\n");
 		sb.append("    rating: ").append(toIndentedString(rating)).append("\n");
 		sb.append("    noOfInquiries: ")
-				.append(toIndentedString(noOfInquiries)).append("\n");
+				.append(toIndentedString(NoOfInquiries)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
