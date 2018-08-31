@@ -1,0 +1,2 @@
+Tests for creditapp.module.FICOScore
+Tests run : 2    Success : 2 	Failure : 0	Errors : 0

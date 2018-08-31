@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:DataServices>
+        <Schema Namespace="http://www.example.org/odata/ODataResource" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityType Abstract="false" HasStream="false"
+                Name="CustomerElement" OpenType="false">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32"/>
+                <Property Name="Name" Type="Edm.String"/>
+                <Property Name="Phone" Type="Edm.String"/>
+                <Property Name="Address" Type="Edm.String"/>
+                <Property Name="State" Type="Edm.String"/>
+                <Property Name="Zipcode" Type="Edm.Int32"/>
+                <Property Name="Email" Type="Edm.String"/>
+            </EntityType>
+        </Schema>
+        <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="Container">
+                <EntitySet
+                    EntityType="http://www.example.org/odata/ODataResource.CustomerElement"
+                    IncludeInServiceDocument="true" Name="EntitySetService"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

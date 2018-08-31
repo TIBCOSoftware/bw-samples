@@ -1,0 +1,114 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/creditdetails" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-creditdetails",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/GiveNewSchemaNameHere"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a CreditScoreSuccessSchema to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/CreditScoreSuccessSchema"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ExperianResponse" : {
+      "type" : "object",
+      "properties" : {
+        "FICOScore" : {
+          "type" : "integer"
+        },
+        "NoOfInquiries" : {
+          "type" : "integer"
+        },
+        "Rating" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GiveNewSchemaNameHere" : {
+      "type" : "object",
+      "properties" : {
+        "DOB" : {
+          "type" : "string"
+        },
+        "FirstName" : {
+          "type" : "string"
+        },
+        "LastName" : {
+          "type" : "string"
+        },
+        "SSN" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CreditScoreSuccessSchema" : {
+      "type" : "object",
+      "properties" : {
+        "EquifaxResponse" : {
+          "$ref" : "#/definitions/EquifaxResponse"
+        },
+        "ExperianResponse" : {
+          "$ref" : "#/definitions/ExperianResponse"
+        },
+        "TransUnionResponse" : {
+          "$ref" : "#/definitions/TransUnionResponse"
+        }
+      }
+    },
+    "TransUnionResponse" : {
+      "type" : "object",
+      "properties" : {
+        "FICOScore" : {
+          "type" : "integer"
+        },
+        "NoOfInquiries" : {
+          "type" : "integer"
+        },
+        "Rating" : {
+          "type" : "string"
+        }
+      }
+    },
+    "EquifaxResponse" : {
+      "type" : "object",
+      "properties" : {
+        "FICOScore" : {
+          "type" : "integer"
+        },
+        "NoOfInquiries" : {
+          "type" : "integer"
+        },
+        "Rating" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

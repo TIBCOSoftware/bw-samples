@@ -1,0 +1,12 @@
+{"records": [{
+    "schemaMappings": [{
+        "entityTypeMappings": [{
+            "xsdElementName": "CustomerElement",
+            "name": "CustomerElement"
+        }],
+        "namespace": "http://www.example.org/odata/ODataResource",
+        "conversionType": "generated",
+        "xsdSchemaLocation": "/CustomerService.module/Schemas/CustomerSchema.xsd"
+    }],
+    "location": "/CustomerService.module/Service Descriptors/ODataResource.csdl"
+}]}

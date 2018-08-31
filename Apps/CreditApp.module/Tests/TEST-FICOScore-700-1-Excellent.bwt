@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/CreditApp.module/Tests/TEST-FICOScore-700-1-Excellent.bwt">
+  <ProcessNode Id="creditapp.module.FICOScore" Name="creditapp.module.FICOScore" ModelType="BW" moduleName="CreditApp.module">
+    <Assertion Id="2632841e-3358-4851-a82f-2f2cd3aeec16" Name="post" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post.item&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$post.item/tns3:SuccessSchema/tns3:FICOScore='800'&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;string>&lt;testInput>&lt;xsl:value-of select=&quot;$post/item/tns3:SuccessSchema/tns3:FICOScore&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;800&quot;/>&lt;/goldInput>&lt;/string>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="creditapp.module.FICOScore">
+      <Inputs Id="f08c9c84-4895-4488-aa64-c358634777bfCreditApp.module_creditapp.module.FICOScore_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS">
+        <informations Name="input" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema">
+          <nameSpaces prefix="tns" nameSapce="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
+          <Parameter Name="tns:GiveNewSchemaNameHere">
+            <parameters Name="tns:DOB" type="string" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" canDelete="true">
+              <parent Name="GiveNewSchemaNameHere" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
+            </parameters>
+            <parameters Name="tns:FirstName" type="string" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" canDelete="true">
+              <parent Name="GiveNewSchemaNameHere" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
+            </parameters>
+            <parameters Name="tns:LastName" type="string" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" canDelete="true">
+              <parent Name="GiveNewSchemaNameHere" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
+            </parameters>
+            <parameters Name="tns:SSN" type="string" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" canDelete="true">
+              <parent Name="GiveNewSchemaNameHere" nameSpace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
+            </parameters>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:GiveNewSchemaNameHere xmlns:tns='/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema' >&lt;tns:DOB>&lt;/tns:DOB>&lt;tns:FirstName>&lt;/tns:FirstName>&lt;tns:LastName>&lt;/tns:LastName>&lt;tns:SSN>&lt;/tns:SSN>&lt;/tns:GiveNewSchemaNameHere>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>
