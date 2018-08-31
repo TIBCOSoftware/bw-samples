@@ -3,6 +3,7 @@
 	<name>CustomerService.module</name>
 	<comment></comment>
 	<projects>
+		<project>LoggingService</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
