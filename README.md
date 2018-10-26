@@ -1,7 +1,10 @@
 # BW Samples
 
-## List of Available Samples goes here
+The BW Samples Repository is for users to try out different samples and demos with TIBCO ActiveMatrix BusinessWorks and TIBCO BusinessWorks Container Edition products.
 
-* TIBCO NOW 2018 Samples
+## Available Samples in this repository
+
+* [TIBCO NOW 2018 Samples](TN2018)
+* Open API samples
 
 This repository is goverened by the the license specified in the license file
