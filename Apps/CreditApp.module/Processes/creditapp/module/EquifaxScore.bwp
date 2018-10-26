@@ -8,6 +8,7 @@
     xmlns:ns0="http://xmlns.example.com/20180827154353PLT"
     xmlns:ns1="http://tns.tibco.com/bw/palette/internal/activityerror+2632841e-3358-4851-a82f-2f2cd3aeec16"
     xmlns:ns2="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"
+    xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+44ece17e-f278-4255-b693-65bb9cf58bca"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -174,10 +175,10 @@
             <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+2632841e-3358-4851-a82f-2f2cd3aeec16"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+44ece17e-f278-4255-b693-65bb9cf58bca"
             xmlns="http://www.w3.org/2001/XMLSchema"
             xmlns:Q1="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"
-            xmlns:Q2="http://tns.tibco.com/bw/REST" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+2632841e-3358-4851-a82f-2f2cd3aeec16">
+            xmlns:Q2="http://tns.tibco.com/bw/REST" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+44ece17e-f278-4255-b693-65bb9cf58bca">
             <import namespace="http://tns.tibco.com/bw/REST"/>
             <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
             <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
@@ -199,8 +200,8 @@
             xmlns:tns="http://xmlns.example.com/20180827154353PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <plnk:partnerLinkType name="partnerLinkType">
-                <plnk:role name="use" portType="tns:creditscore"/>
+            <plnk:partnerLinkType name="partnerLinkType1">
+                <plnk:role name="use" portType="tns:creditscore1"/>
             </plnk:partnerLinkType>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
             <wsdl:import namespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
@@ -227,6 +228,21 @@
                     tibex:reasonPhrase="Record Not Found"
                     tibex:statusCode="404" type="xsd:string"/>
             </wsdl:message>
+            <wsdl:message name="postRequest1">
+                <wsdl:part element="extns1:GiveNewSchemaNameHere"
+                    name="item" tibex:hasMultipleNamespaces="false"/>
+                <wsdl:part element="extns:httpHeaders"
+                    name="httpHeaders" tibex:source="bw.rest"/>
+            </wsdl:message>
+            <wsdl:message name="postResponse1">
+                <wsdl:part element="extns1:SuccessSchema" name="item" tibex:hasMultipleNamespaces="false"/>
+            </wsdl:message>
+            <wsdl:message name="post4XXFaultMessage1">
+                <wsdl:part element="extns:client4XXError" name="clientError"/>
+            </wsdl:message>
+            <wsdl:message name="post5XXFaultMessage1">
+                <wsdl:part element="extns:server5XXError" name="serverError"/>
+            </wsdl:message>
             <wsdl:portType name="creditscore"
                 tibex:bw.rest.apipath="/creditscore"
                 tibex:bw.rest.basepath="/y54cuadtcxtfstqs3rux2gfdaxppoqgc"
@@ -240,6 +256,19 @@
                     <wsdl:fault message="tns:post4XXFaultMessage" name="clientFault"/>
                     <wsdl:fault message="tns:post5XXFaultMessage" name="serverFault"/>
                     <wsdl:fault message="tns:post404FaultMessage" name="client-404-Fault"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <wsdl:portType name="creditscore1"
+                tibex:bw.rest.apipath="/creditscore"
+                tibex:bw.rest.basepath="/"
+                tibex:bw.rest.host="localhost:13080"
+                tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.reference">
+                <wsdl:documentation>summary documentation</wsdl:documentation>
+                <wsdl:operation name="post">
+                    <wsdl:input message="tns:postRequest1" name="postInput"/>
+                    <wsdl:output message="tns:postResponse1" name="postOutput"/>
+                    <wsdl:fault message="tns:post4XXFaultMessage1" name="clientFault"/>
+                    <wsdl:fault message="tns:post5XXFaultMessage1" name="serverFault"/>
                 </wsdl:operation>
             </wsdl:portType>
         </wsdl:definitions>
@@ -260,6 +289,37 @@
                 <element href="//0/@process"/>
             </children>
             <children type="3002">
+                <children type="4008">
+                    <children type="40012"/>
+                    <children type="3008">
+                        <styles xsi:type="notation:DrawerStyle"/>
+                        <styles xsi:type="notation:SortingStyle"/>
+                        <styles xsi:type="notation:FilteringStyle"/>
+                        <styles xsi:type="bwnotation:BackgroundStyle"/>
+                        <styles xsi:type="bwnotation:ResizingStyle"/>
+                    </children>
+                    <children type="4017">
+                        <styles fontName=".SF NS Text" lineColor="0" xsi:type="notation:ShapeStyle"/>
+                        <layoutConstraint xsi:type="notation:Bounds"/>
+                    </children>
+                    <children type="4017">
+                        <styles fontName=".SF NS Text" lineColor="0" xsi:type="notation:ShapeStyle"/>
+                        <layoutConstraint xsi:type="notation:Bounds"/>
+                    </children>
+                    <children type="4017">
+                        <styles fontName=".SF NS Text" lineColor="0" xsi:type="notation:ShapeStyle"/>
+                        <layoutConstraint xsi:type="notation:Bounds"/>
+                    </children>
+                    <children type="4017">
+                        <styles fontName=".SF NS Text" lineColor="0" xsi:type="notation:ShapeStyle"/>
+                        <layoutConstraint xsi:type="notation:Bounds"/>
+                    </children>
+                    <styles fontName=".SF NS Text" lineColor="0" xsi:type="notation:ShapeStyle"/>
+                    <styles xsi:type="bwnotation:BackgroundStyle"/>
+                    <styles xsi:type="bwnotation:ResizingStyle"/>
+                    <element href="//0/@process/@partnerLinks/@children.0"/>
+                    <layoutConstraint xsi:type="notation:Bounds"/>
+                </children>
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
                 <element href="//0/@process"/>
@@ -361,28 +421,24 @@
                                     <styles
                                     fontName=".SF NS Text"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName=".SF NS Text"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName=".SF NS Text"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName=".SF NS Text"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles
@@ -393,7 +449,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="118"
+                                    <layoutConstraint x="125"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -478,9 +534,9 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/y54cuadtcxtfstqs3rux2gfdaxppoqgc/parameters"/>
     <bpws:partnerLinks>
-        <bpws:partnerLink name="creditscore"
-            partnerLinkType="ns0:partnerLinkType" partnerRole="use"
-            sca-bpel:ignore="true" sca-bpel:reference="creditscore" sca-bpel:wiredByImpl="false">
+        <bpws:partnerLink name="creditscore1"
+            partnerLinkType="ns0:partnerLinkType1" partnerRole="use"
+            sca-bpel:ignore="true" sca-bpel:reference="creditscore1" sca-bpel:wiredByImpl="false">
             <tibex:ReferenceBinding>
                 <tibex:binding>
                     <bwbinding:BWBaseBinding
@@ -489,37 +545,23 @@
                         xmlns:sca="http://www.osoa.org/xmlns/sca/1.0"
                         xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType"
                         xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                        <referenceBinding name="creditscore" xsi:type="scact:Reference">
+                        <referenceBinding name="creditscore1" xsi:type="scact:Reference">
                             <sca:interface.wsdl
-                                interface="http://xmlns.example.com/20180827154353PLT#wsdl.interface(creditscore)" scaext:wsdlLocation=""/>
-                            <scaext:binding
-                                basePath="/y54cuadtcxtfstqs3rux2gfdaxppoqgc"
-                                connector="creditapp.module.HttpClientResource"
+                                interface="http://xmlns.example.com/20180827154353PLT#wsdl.interface(creditscore1)" scaext:wsdlLocation=""/>
+                            <scaext:binding basePath="/"
+                                connector="creditapp.module.HttpClientResource2"
                                 docBasePath="http://localhost:7777/"
                                 docResourcePath="Creditscore"
-                                implementation="Service Descriptors/getcreditstorebackend_0_1_mock_app.json"
-                                name="RestReference"
-                                path="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/creditscore"
+                                name="RestReference" path="/creditscore"
                                 structuredData="true"
-                                technologyVersion="2.0" xsi:type="rest:RestReferenceBinding">
+                                technologyVersion="" xsi:type="rest:RestReferenceBinding">
                                 <operation httpMethod="POST"
-                                    nickname="postScore"
-                                    notes="Returns Credit Score"
+                                    nickname="post-creditscore"
                                     operationName="post"
                                     requestEntityProcessing="chunked"
                                     requestStyle="element" responseStyle="element">
-                                    <parameters>
-                                    <parameterMapping
-                                    dataType="boolean"
-                                    description="Skip matching Inputs provided against record received from database"
-                                    parameterName="skipvalidation" parameterType="Query"/>
-                                    </parameters>
-                                    <responseStatus dataType="string"
-                                    reasonPhrase="Record Not Found" statusCode="404"/>
                                     <clientFormat>json</clientFormat>
-                                    <clientFormat>xml</clientFormat>
                                     <clientRequestFormat>json</clientRequestFormat>
-                                    <clientRequestFormat>xml</clientRequestFormat>
                                 </operation>
                                 <parameters/>
                                 <advancedConfig blockingQueueSize="2147483647"/>
@@ -533,15 +575,15 @@
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postRequest" name="post-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postResponse" name="post" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:ActivityErrorData"
-            name="_error_post" sca-bpel:internal="true"/>
-        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:GiveNewSchemaNameHere" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
         <bpws:variable element="ns2:SuccessSchema" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
+        <bpws:variable messageType="ns0:postRequest1" name="post-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:postResponse1" name="post" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ActivityErrorData"
+            name="_error_post" sca-bpel:internal="true"/>
+        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -601,16 +643,14 @@
             </bpws:extensionActivity>
             <bpws:invoke inputVariable="post-input" name="post"
                 operation="post" outputVariable="post"
-                partnerLink="creditscore" portType="ns0:creditscore" tibex:xpdlId="2632841e-3358-4851-a82f-2f2cd3aeec16">
+                partnerLink="creditscore1" portType="ns0:creditscore1" tibex:xpdlId="44ece17e-f278-4255-b693-65bb9cf58bca">
                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20180827154353PLT" xmlns:tns1="http://tns.tibco.com/bw/REST" xmlns:tns2="http://xmlns.example.com/y54cuadtcxtfstqs3rux2gfdaxppoqgc/parameters" version="2.0"&gt;&lt;xsl:param name="Start"/&gt;&lt;xsl:template name="post-input" match="/"&gt;&lt;tns:postRequest&gt;&lt;item&gt;&lt;xsl:copy-of select="$Start"/&gt;&lt;/item&gt;&lt;httpHeaders&gt;&lt;tns1:httpHeaders/&gt;&lt;/httpHeaders&gt;&lt;parameters&gt;&lt;tns2:creditscorePostParameters&gt;&lt;tns2:skipvalidation&gt;&lt;xsl:value-of select="false()"/&gt;&lt;/tns2:skipvalidation&gt;&lt;/tns2:creditscorePostParameters&gt;&lt;/parameters&gt;&lt;/tns:postRequest&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20180827154353PLT" xmlns:tns1="http://tns.tibco.com/bw/REST" xmlns:tns3="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" version="2.0"&gt;&lt;xsl:param name="Start"/&gt;&lt;xsl:template name="post-input" match="/"&gt;&lt;tns:postRequest1&gt;&lt;item&gt;&lt;tns3:GiveNewSchemaNameHere&gt;&lt;xsl:if test="$Start/tns3:DOB"&gt;&lt;tns3:DOB&gt;&lt;xsl:value-of select="$Start/tns3:DOB"/&gt;&lt;/tns3:DOB&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$Start/tns3:FirstName"&gt;&lt;tns3:FirstName&gt;&lt;xsl:value-of select="$Start/tns3:FirstName"/&gt;&lt;/tns3:FirstName&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$Start/tns3:LastName"&gt;&lt;tns3:LastName&gt;&lt;xsl:value-of select="$Start/tns3:LastName"/&gt;&lt;/tns3:LastName&gt;&lt;/xsl:if&gt;&lt;xsl:if test="$Start/tns3:SSN"&gt;&lt;tns3:SSN&gt;&lt;xsl:value-of select="$Start/tns3:SSN"/&gt;&lt;/tns3:SSN&gt;&lt;/xsl:if&gt;&lt;/tns3:GiveNewSchemaNameHere&gt;&lt;/item&gt;&lt;httpHeaders&gt;&lt;tns1:httpHeaders/&gt;&lt;/httpHeaders&gt;&lt;/tns:postRequest1&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20180827154353PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns2=&quot;http://xmlns.example.com/y54cuadtcxtfstqs3rux2gfdaxppoqgc/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;post-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:copy-of select=&quot;$Start&quot;/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20180827154353PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns3=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;post-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:GiveNewSchemaNameHere>&#xa;            &lt;xsl:if test=&quot;$Start/tns3:DOB&quot;>&#xa;                &lt;tns3:DOB>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns3:DOB&quot;/>&#xa;                &lt;/tns3:DOB>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$Start/tns3:FirstName&quot;>&#xa;                &lt;tns3:FirstName>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns3:FirstName&quot;/>&#xa;                &lt;/tns3:FirstName>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$Start/tns3:LastName&quot;>&#xa;                &lt;tns3:LastName>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns3:LastName&quot;/>&#xa;                &lt;/tns3:LastName>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$Start/tns3:SSN&quot;>&#xa;                &lt;tns3:SSN>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns3:SSN&quot;/>&#xa;                &lt;/tns3:SSN>&#xa;            &lt;/xsl:if>&#xa;        &lt;/tns3:GiveNewSchemaNameHere>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20180827154353PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns2=&quot;http://xmlns.example.com/y54cuadtcxtfstqs3rux2gfdaxppoqgc/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;post-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:httpHeaders/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20180827154353PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns2=&quot;http://xmlns.example.com/y54cuadtcxtfstqs3rux2gfdaxppoqgc/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;post-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:creditscorePostParameters>&#xa;            &lt;tns2:skipvalidation>&#xa;                &lt;xsl:value-of select=&quot;false()&quot;/>&#xa;            &lt;/tns2:skipvalidation>&#xa;        &lt;/tns2:creditscorePostParameters>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20180827154353PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns3=&quot;/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;post-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:httpHeaders/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="StartTopost"/>

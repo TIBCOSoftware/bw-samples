@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://tns.tibco.com/bw/activity/jsonRender/xsd/input/55832ae5-2a37-4b37-8392-a64537f49367" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tns.tibco.com/bw/activity/jsonRender/xsd/input/55832ae5-2a37-4b37-8392-a64537f49367">
+  <xsd:element name="InputElement" tibex:source="bw.json.render">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="dob" type="xsd:string"/>
+        <xsd:element name="firstName" type="xsd:string"/>
+        <xsd:element name="lastName" type="xsd:string"/>
+        <xsd:element name="ssn" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

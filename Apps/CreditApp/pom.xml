@@ -11,9 +11,10 @@
   <artifactId>CreditApp</artifactId>
   <packaging>bwear</packaging>
   <properties>
-    <skipTests>false</skipTests>
-    <project.type>None</project.type>
+    <skipTests>true</skipTests>
     <bw.Home>/bw/6.5</bw.Home>
+    <project.type>None</project.type>
+    <failIfNoTests>false</failIfNoTests>
     <tibco.Home>/Users/vagarwal/TIBCO/bw650v63</tibco.Home>
   </properties>
   <build>

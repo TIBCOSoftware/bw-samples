@@ -3,10 +3,6 @@
   <xs:element name="creditscorePostParameters">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="1" minOccurs="0" name="DOB" type="xs:string"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="FirstName" type="xs:string"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="LastName" type="xs:string"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="SSN" type="xs:string"/>
             </xs:sequence>
     </xs:complexType>
   </xs:element>

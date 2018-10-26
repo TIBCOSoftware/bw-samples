@@ -1366,8 +1366,9 @@
         <bpws:variable element="ns:FaultDetail" name="FaultDetails1" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:get5XXFaultMessage"
             name="Reply1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:LogMessage" name="CallProcess-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:result" name="CallProcess" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:LogMessage"
+            name="LogBeforeInvoke-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:result" name="LogBeforeInvoke" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:LogMessage"
             name="CallProcess1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:result" name="CallProcess1" sca-bpel:internal="true"/>
@@ -1579,9 +1580,9 @@
                             </bpws:invoke>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="CallProcess-input"
-                                    name="CallProcess"
-                                    outputVariable="CallProcess"
+                                    inputVariable="LogBeforeInvoke-input"
+                                    name="LogBeforeInvoke"
+                                    outputVariable="LogBeforeInvoke"
                                     tibex:xpdlId="e9111994-3daf-4036-8e5e-c5b8492a2d9c"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:sources>

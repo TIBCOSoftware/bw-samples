@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema elementFormDefault="qualified" targetNamespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" xmlns:tns="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:tns="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema">
     <xs:element name="SuccessSchema" type="tns:SuccessSchema"/>
     <xs:complexType name="SuccessSchema">
         <xs:sequence>
@@ -11,7 +11,7 @@
     <xs:element name="GiveNewSchemaNameHere" type="tns:GiveNewSchemaNameHere"/>
     <xs:complexType name="GiveNewSchemaNameHere">
         <xs:sequence>
-            <xs:element minOccurs="0" name="DOB" type="xs:string"/>
+        	<xs:element minOccurs="0" name="DOB" type="xs:string"/>
             <xs:element minOccurs="0" name="FirstName" type="xs:string"/>
             <xs:element minOccurs="0" name="LastName" type="xs:string"/>
             <xs:element minOccurs="0" name="SSN" type="xs:string"/>

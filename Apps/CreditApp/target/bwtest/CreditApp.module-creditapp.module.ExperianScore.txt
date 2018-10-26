@@ -1,2 +1,0 @@
-Tests for creditapp.module.ExperianScore
-Tests run : 1    Success : 0 	Failure : 1	Errors : 0

@@ -22,6 +22,8 @@
   <sca:property xmi:id="_ZR9JAKpDEeiI6tdO_e3S_Q" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ZSAzYKpDEeiI6tdO_e3S_Q" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
   <sca:property xmi:id="_ZSEdwKpDEeiI6tdO_e3S_Q" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jr-8sK7JEei06sw6ugg0qg" name="ExperianAppHostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_n8BOgK7JEei06sw6ugg0qg" name="BWAppHostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_HdbL4KpNEeiI6tdO_e3S_Q" name="ComponentMainProcess" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_HdbL4apNEeiI6tdO_e3S_Q" processName="creditapp.module.MainProcess"/>
     <sca:service xmi:id="_Kyr3gKpNEeiI6tdO_e3S_Q" name="creditdetails">

@@ -83,19 +83,19 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreditApp.module//ExperianAppHostname</name>
-			<value>localhost</value>
+			<value>host.docker.internal</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//CreditApp.module//BWAppHostname</name>
-			<value>localhost</value>
+			<value>host.docker.internal</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 	</globalVariables>
 </repository>
