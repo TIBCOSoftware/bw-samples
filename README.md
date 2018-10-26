@@ -4,7 +4,7 @@ The BW Samples Repository is for users to try out different samples and demos wi
 
 ## Available Samples in this repository
 
-* [TIBCO NOW 2018 Samples](TN2018)
-* Open API samples
+* [TIBCO NOW 2018 Samples](TN2018/Apps)
+* [Open API samples](Open%20API)
 
 This repository is goverened by the the license specified in the license file
