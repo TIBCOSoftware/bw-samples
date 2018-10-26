@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_HaiCEK5BEeiBHJC95yaHBQ" name="creditcheckservice.JDBCConnectionResource" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_HawrkK5BEeiBHJC95yaHBQ" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_Hawrka5BEeiBHJC95yaHBQ" username="bwuser" password="#!yk2zPUfipGX2vB+1XNJha9KX6eLVDmcZ">
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_Hawrkq5BEeiBHJC95yaHBQ" jdbcDriver="org.postgresql.Driver" dbURL="BWCE.DB.URL jdbc:postgresql://awagle:5432/bookstore">
+      <substitutionBindings xmi:id="_cMCEoK5NEeiBHJC95yaHBQ" template="dbURL" propName="BWCE.DB.URL"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

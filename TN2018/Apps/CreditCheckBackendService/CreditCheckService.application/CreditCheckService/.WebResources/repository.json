@@ -1,0 +1,19 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [{
+            "localTimestamp": 1535753823000,
+            "localURI": "/CreditCheckService/Service Descriptors/GetCreditStoreBackend_0.1.json",
+            "disabled": false,
+            "remoteTimestamp": 1535519796000,
+            "localHash": "cd5bda81fc7bb2cd332280a4f2e474750395524b",
+            "remoteId": "6",
+            "remoteHash": "cd5bda81fc7bb2cd332280a4f2e474750395524b"
+        }],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [{
+        "location": "Service Descriptors/creditcheckservice.Process-CreditScore.json",
+        "type": "generated"
+    }]
+}
