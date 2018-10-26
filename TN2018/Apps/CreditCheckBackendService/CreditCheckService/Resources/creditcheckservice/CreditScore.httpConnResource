@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_5nGhwK1sEeinzqZPu0o7yw" name="creditcheckservice.CreditScore" type="httpconnector:HttpConnectorConfiguration">
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_5nGhwa1sEeinzqZPu0o7yw" svcRegServiceName="CreditCheckBWCE">
+    <substitutionBindings xmi:id="_5nGhwq1sEeinzqZPu0o7yw" template="host" propName="BW.HOST.NAME"/>
+    <substitutionBindings xmi:id="_oI7_sK5GEeiBHJC95yaHBQ" template="port" propName="HTTP.SERVICE.PORT"/>
+  </jndi:configuration>
+</jndi:namedResource>

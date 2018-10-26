@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/CreditApp.module/Tests/TEST-Experian-Score-2-Good.bwt">
+  <ProcessNode Id="creditapp.module.ExperianScore" Name="creditapp.module.ExperianScore" ModelType="BW" moduleName="CreditApp.module">
+    <Assertion Id="1be55e0e-7079-430a-ad9b-28ce07f5f60e" Name="End" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/json/1535671685533&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;xsd:int($End-input/tns3:fiCOScore)=800&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:choose>&lt;xsl:when test=&quot;xsd:int($End-input/tns3:noOfInquiries)=2&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:choose>&lt;xsl:when test=&quot;'$End-input/tns3:rating'='Good'&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/json/1535671685533&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template name=&quot;&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;int>&lt;testInput>&lt;xsl:value-of select=&quot;xsd:int($End-input/tns3:fiCOScore)&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;800&quot;/>&lt;/goldInput>&lt;/int>&lt;/AssertType>&lt;AssertType>&lt;int>&lt;testInput>&lt;xsl:value-of select=&quot;xsd:int($End-input/tns3:noOfInquiries)&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;2&quot;/>&lt;/goldInput>&lt;/int>&lt;/AssertType>&lt;AssertType>&lt;string>&lt;testInput>&lt;xsl:value-of select=&quot;$End-input/tns3:rating&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;&amp;quot;Good&amp;quot;&quot;/>&lt;/goldInput>&lt;/string>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="creditapp.module.ExperianScore">
+      <Inputs Id="9c981ba7-102b-4d7d-a89d-30cad8fa002bCreditApp.module_creditapp.module.ExperianScore_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS">
+        <informations Name="input" nameSpace="http://xmlns.example.com/Creditscore/parameters">
+          <nameSpaces prefix="tns" nameSapce="http://xmlns.example.com/Creditscore/parameters"/>
+          <Parameter Name="tns:creditscorePostParameters">
+            <parameters Name="tns:DOB" Value="01-01-2018" type="string" nameSpace="http://xmlns.example.com/Creditscore/parameters" canDelete="true"/>
+            <parameters Name="tns:FirstName" Value="John" type="string" nameSpace="http://xmlns.example.com/Creditscore/parameters" canDelete="true"/>
+            <parameters Name="tns:LastName" Value="Doe" type="string" nameSpace="http://xmlns.example.com/Creditscore/parameters" canDelete="true"/>
+            <parameters Name="tns:SSN" Value="123-45-9389" type="string" nameSpace="http://xmlns.example.com/Creditscore/parameters" canDelete="true"/>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:creditscorePostParameters xmlns:tns='http://xmlns.example.com/Creditscore/parameters' >&lt;tns:DOB>01-01-2018&lt;/tns:DOB>&lt;tns:FirstName>John&lt;/tns:FirstName>&lt;tns:LastName>Doe&lt;/tns:LastName>&lt;tns:SSN>123-45-9389&lt;/tns:SSN>&lt;/tns:creditscorePostParameters>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>

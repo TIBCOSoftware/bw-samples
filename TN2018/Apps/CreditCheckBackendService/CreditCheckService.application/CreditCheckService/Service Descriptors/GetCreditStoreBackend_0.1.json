@@ -1,0 +1,105 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1",
+    "title": "GetCreditStoreBackend",
+    "x-lastModified": "Aug 28, 2018 15:16PM PST",
+    "description": "Credit Store backend services"
+  },
+  "paths": {
+    "/creditscore": {
+      "post": {
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/SuccessSchema"
+            },
+            "examples": {
+              "application/json": {
+                "FICOScore": 800,
+                "Rating": "Excellent",
+                "NoOfInquiries": 1
+              }
+            }
+          },
+          "404": {
+            "description": "Record Not Found",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "skipvalidation",
+            "in": "query",
+            "description": "Skip matching Inputs provided against record received from database",
+            "required": false,
+            "type": "boolean",
+            "format": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            }
+          }
+        ],
+        "operationId": "postScore",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "description": "Returns Credit Score",
+        "summary": "Returns Credit Score"
+      }
+    }
+  },
+  "definitions": {
+    "GiveNewSchemaNameHere": {
+      "type": "object",
+      "properties": {
+        "SSN": {
+          "type": "string",
+          "default": "123-45-6789"
+        },
+        "FirstName": {
+          "type": "string",
+          "default": "Aditya"
+        },
+        "LastName": {
+          "type": "string",
+          "default": "Wagle"
+        },
+        "DOB": {
+          "type": "string",
+          "default": "12/29/1984"
+        }
+      }
+    },
+    "SuccessSchema": {
+      "type": "object",
+      "properties": {
+        "FICOScore": {
+          "type": "integer",
+          "default": 800
+        },
+        "Rating": {
+          "type": "string",
+          "default": "Excellent"
+        },
+        "NoOfInquiries": {
+          "type": "integer",
+          "default": 1
+        }
+      }
+    }
+  }
+}

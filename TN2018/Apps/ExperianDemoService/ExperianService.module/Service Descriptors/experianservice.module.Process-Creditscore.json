@@ -1,0 +1,73 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:7080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/creditscore" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-creditscore",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/InputElement"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a ExperianResponseSchemaElement to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ExperianResponseSchemaElement"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ExperianResponseSchemaElement" : {
+      "type" : "object",
+      "properties" : {
+        "fiCOScore" : {
+          "type" : "integer"
+        },
+        "rating" : {
+          "type" : "string"
+        },
+        "noOfInquiries" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "InputElement" : {
+      "type" : "object",
+      "required" : [ "firstName", "lastName", "dob", "ssn" ],
+      "properties" : {
+        "dob" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "ssn" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

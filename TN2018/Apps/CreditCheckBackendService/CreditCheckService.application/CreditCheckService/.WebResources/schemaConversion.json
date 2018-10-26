@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/CreditCheckService/Service Descriptors/GetCreditStoreBackend_0.1.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1535753828744Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/CreditCheckService/Service Descriptors/creditcheckservice.Process-CreditScore.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "/T1535753828744Converted/JsonSchema"
+    }
+]}

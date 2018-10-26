@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:tns="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema">
+    <xs:element name="SuccessSchema" type="tns:SuccessSchema"/>
+    <xs:complexType name="SuccessSchema">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="FICOScore" type="xs:integer"/>
+            <xs:element minOccurs="0" name="NoOfInquiries" type="xs:integer"/>
+            <xs:element minOccurs="0" name="Rating" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="GiveNewSchemaNameHere" type="tns:GiveNewSchemaNameHere"/>
+    <xs:complexType name="GiveNewSchemaNameHere">
+        <xs:sequence>
+        	<xs:element minOccurs="0" name="DOB" type="xs:string"/>
+            <xs:element minOccurs="0" name="FirstName" type="xs:string"/>
+            <xs:element minOccurs="0" name="LastName" type="xs:string"/>
+            <xs:element minOccurs="0" name="SSN" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="CreditScoreSuccessSchema" type="tns:CreditScoreSuccessSchema"/>
+    
+    <xs:complexType name="CreditScoreSuccessSchema">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="EquifaxResponse" type="tns:SuccessSchema"/>
+            <xs:element minOccurs="0" name="ExperianResponse" type="tns:SuccessSchema"/>
+            <xs:element minOccurs="0" name="TransUnionResponse" type="tns:SuccessSchema"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

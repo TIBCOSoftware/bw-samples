@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ExperianService.module/Service Descriptors/experianservice.module.Process-Creditscore.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/activity/jsonRender/xsd/input/55832ae5-2a37-4b37-8392-a64537f49367"
+    },
+    {
+        "jsonSchemaLocation": "/ExperianService.module/Service Descriptors/experianservice.module.Process-Creditscore.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1535671685533"
+    }
+]}

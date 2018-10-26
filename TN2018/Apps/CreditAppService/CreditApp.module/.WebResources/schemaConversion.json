@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/CreditApp.module/Service Descriptors/getcreditstorebackend_0_1_mock_app.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/CreditApp.module/Service Descriptors/creditapp.module.MainProcess-CreditDetails.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "/y54cuadtcxtfstqs3rux2gfdaxppoqgc/T1535409245354Converted/JsonSchema"
+    }
+]}
