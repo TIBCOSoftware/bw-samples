@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Sample
+Bundle-SymbolicName: com.tibco.bwce.profile.sample
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: com.tibco.bwce.profile.resolver;version="1.0.100"
