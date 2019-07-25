@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:9.6.5
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: bookstore
+        - name: POSTGRES_USER
+          value: bwuser
+        - name: POSTGRES_PASSWORD
+          value: bwuser
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  type: NodePort
+  ports:
+  - port: 5432
+  selector:
+    app: postgres

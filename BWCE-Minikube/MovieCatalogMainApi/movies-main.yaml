@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-api-app
+  labels:
+    app: movie-api-app
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 9090
+  selector:
+    app: movie-api-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-api-app
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movie-api-app
+  template:
+    metadata:
+      name: movie-api-app
+      labels:
+        app: movie-api-app
+    spec:
+      containers:
+        - name: movie-api-app
+          image: movie-api:2.4.4
+          imagePullPolicy: Never
+          env:
+          - name: BW_LOGLEVEL
+            value: "ERROR"
+          - name: BW_JAVA_OPTS
+            value: "-Dbw.engine.opentracing.enable=true"
+          - name: BW_PROFILE
+            value: "docker"
+          - name: APP_CONFIG_PROFILE
+            value: "docker"
+          - name: CONSUL_SERVER_URL
+            value: "http://10.96.36.53:8500"
+          ports:
+            - containerPort: 8080
