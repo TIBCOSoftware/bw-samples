@@ -1,0 +1,68 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "MovieSearch"
+  },
+  "host" : "localhost:8080",
+  "schemes" : [ "http" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/movies" : {
+      "get" : {
+        "tags" : [ "Movies" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "searchString",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Sample Description",
+            "schema" : {
+              "$ref" : "#/definitions/OMDBSearchElement"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "OMDBSearchElement" : {
+      "type" : "object",
+      "properties" : {
+        "Search" : {
+          "type" : "array",
+          "items" : {
+            "properties" : {
+              "Type" : {
+                "type" : "string"
+              },
+              "Year" : {
+                "type" : "string"
+              },
+              "imdbID" : {
+                "type" : "string"
+              },
+              "Poster" : {
+                "type" : "string"
+              },
+              "Title" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "totalResults" : {
+          "type" : "string"
+        },
+        "Response" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

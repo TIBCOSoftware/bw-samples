@@ -1,0 +1,28 @@
+<get.item>
+    <MovieDetails xmlns="http://www.example.org/MovieCatalogMaster">
+        <Title>Sacred Games</Title>
+        <Year>2018–</Year>
+        <Rated>TV-MA</Rated>
+        <Released>06 Jul 2018</Released>
+        <Runtime>50 min</Runtime>
+        <Genre>Action, Crime, Drama, Thriller</Genre>
+        <Director>N/A</Director>
+        <Writer>N/A</Writer>
+        <Actors>Saif Ali Khan, Nawazuddin Siddiqui, Radhika Apte, Neeraj Kabi</Actors>
+        <Plot>A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm.</Plot>
+        <Language>Hindi, Indian Sign Language, Marathi, English</Language>
+        <Country>India, USA</Country>
+        <Awards>N/A</Awards>
+        <Poster>https://m.media-amazon.com/images/M/MV5BOTQ2NmY1YzEtYzkzZC00OGJmLTg3NDEtNzc3NmUzODE1YjhhXkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_SX300.jpg</Poster>
+        <Ratings>
+            <Source>Internet Movie Database</Source>
+            <Value>8.9/10</Value>
+        </Ratings>
+        <Metascore>N/A</Metascore>
+        <imdbRating>8.9</imdbRating>
+        <imdbVotes>54,548</imdbVotes>
+        <imdbID>tt6077448</imdbID>
+        <Type>series</Type>
+        <Response>True</Response>
+    </MovieDetails>
+</get.item>
