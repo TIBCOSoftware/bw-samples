@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.tibco.bw.custom.app.props.CustomAppProps">
+   <implementation class="com.tibco.custom.configuration.management.GetPropertyValues"/>
+   <service>
+      <provide interface="com.tibco.bw.runtime.customProps.ExternalApplicationProperties"/>
+   </service>
+   <property name="external.config" type="String" value="custom" />
+</scr:component>
