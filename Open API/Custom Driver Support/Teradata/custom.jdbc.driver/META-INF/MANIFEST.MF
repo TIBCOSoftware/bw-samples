@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Driver
+Bundle-SymbolicName: custom.jdbc.driver
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: lib/terajdbc4.jar,lib/tdgssconfig.jar, .
+Export-Package: custom.jdbc.driver;version="1.0.0.qualifier"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Service-Component: OSGI-INF/customDataSourceFactory.xml
+Import-Package: javax.xml.parsers;version="[1.0.0,2.0.0)",
+ org.osgi.framework;version="[1.6.0,2.0.0)",
+ org.osgi.service.jdbc;version="[1.0.0,2.0.0)"

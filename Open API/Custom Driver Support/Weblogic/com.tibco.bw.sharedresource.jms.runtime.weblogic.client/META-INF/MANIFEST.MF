@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BW6WebLogicJMSClient
+Bundle-SymbolicName: com.tibco.bw.sharedresource.jms.runtime.weblogic.client
+Bundle-Version: 1.0.0
+Bundle-Vendor: TIBCO
+Bundle-Activator: com.tibco.bw.sr.jms.runtime.weblogic.client.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: com.tibco.bw.sharedresource.trinity.ssl.client.runtime;version="6.3.100",
+ com.tibco.bw.sr.jms.runtime.api;version="6.3.100",
+ com.tibco.bx.core.service;version="1.12.100",
+ javax.jms;version="2.0.0",
+ org.osgi.framework;version="[1.6.0,2.0.0)"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/wlfullclient.jar,
+ .
