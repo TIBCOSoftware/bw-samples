@@ -1,6 +1,6 @@
 # Teradata JDBC Driver
 
-This bundle can be used to connect to Teradata using the Custom JDBC Driver support in TIBCO ActiveMatrix BusinessWorks, TIBCO BusinessWorks Container Edition and TIBCO Cloud Integration.
+This bundle can be used to connect to Teradata using the Custom JDBC Driver support in TIBCO ActiveMatrix BusinessWorks 6.x, TIBCO BusinessWorks Container Edition and TIBCO Cloud Integration.
 
 ## Driver jar requirements
 
