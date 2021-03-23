@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="TIBCO BW Custom DataSource Factory">
+   <implementation class="custom.jdbc.driver.CustomDataSourceFactory"/>
+   
+   <property name="osgi.jdbc.driver.class" type="String" value="com.teradata.jdbc.TeraDriver"/>
+   <property name="osgi.jdbc.driver.name" type="String" value="JTDS"/>
+   <property name="osgi.jdbc.driver.version" type="String" value="1.3.1"/>
+   
+   <service>
+      <provide interface="org.osgi.service.jdbc.DataSourceFactory"/>
+   </service>
+</scr:component>
