@@ -17,7 +17,9 @@ This sample is about a simple order management workflow, where an order can be b
 - onArrive
 - onDeliver
 
-The tree view in the below image can show the parsed swagger spec. The callback URLs have been dragged and dropped to create the Service and Reference bindings for the order booking and the callback processes. The notifier service process is just acting as a middleware to other flows.
+The tree view in the below image can show the parsed swagger spec. The callback URLs have been dragged and dropped to create the Service and Reference bindings for the order booking and the callback processes. 
+The notifier service process is just acting as a middleware to other flows.
+
 ![SpecTreeView.bwp](images/SpecTreeView.PNG)
 
 ## Sample Project workflows:
@@ -28,12 +30,14 @@ The workflow has been specified sequentially below.
 
 **OrderBookingClient.bwp** process posts an order to the _/place-order_ endpoint implemented on **OrderBookingService.bwp**
 SwaggerUI or any other REST Clients can also be used to post an order.
+
 ![OrderBookingClient.bwp](images/OrderBookingClient.PNG)
 
 ### Order booking service implementation:
 
 **OrderBookingService.bwp** accepts all the order request and creates an _OrderRecord_ against it and appends it in the _OrderRegistry_ module shared variable.
 After this the processing of the order is delegated to an **OrderProcessor.bwp** subprocess which works asynchronously and simultaneously the client is acknowledged with the response for booking the order accomodating an _orderId_ against that order.
+
 ![OrderBookingService.bwp](images/OrderBookingService.PNG)
 
 ### Order Processor:
@@ -51,11 +55,13 @@ The events are of type:
 
 This service anticipate the event requests and invokes the notifications to respective callback endpoint.
 Based on the event type the notification is sent to the respective callback endpoint.
+
 ![NotifierService.bwp](images/NotifierService.PNG)
 
 ### Callbacks Service:
 
 The callback service bindings created on **OrderNotificationCallbackService.bwp** by dragging and dropping the callback URL nodes from tree view for each event types mentioned above, will serve the notifications for respective events.
 For processing of notifications, the **NotificationSubProcess** is triggered which for now just logs the details but this can be totally extensible to scenarios like sending mails to respective customer regarding order events.
+
 ![OrderNotificationCallbackService.bwp](images/OrderNotificationCallbackService.PNG)
 ![NotificationSubProcess.bwp](images/NotificationSubProcess.PNG)
