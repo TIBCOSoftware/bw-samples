@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="moduleSharedOrderRegistry" type="{http://www.example.org/OrderTracking}OrderRegistry" initialValueMode="none"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/OrderTracking" location="../Schemas/OrderTracking.xsd"/>
+</msv:DocumentRoot>

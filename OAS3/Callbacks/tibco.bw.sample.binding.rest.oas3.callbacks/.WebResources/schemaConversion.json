@@ -1,0 +1,17 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/tibco.bw.sample.binding.rest.oas3.callbacks/Service Descriptors/tibco.bw.sample.binding.rest.openapi3.notifier.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1636708000671Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/tibco.bw.sample.binding.rest.oas3.callbacks/Service Descriptors/tibco.bw.sample.binding.rest.openapi3.notifier.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1636721219933Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/tibco.bw.sample.binding.rest.oas3.callbacks/Service Descriptors/tibco.bw.sample.binding.rest.openapi3.orderBooking.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1636825686391Converted/JsonSchema"
+    }
+]}
