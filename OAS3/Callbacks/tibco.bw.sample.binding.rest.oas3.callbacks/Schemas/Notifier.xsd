@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1636721219933Converted/JsonSchema" xmlns:tns="/T1636721219933Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="eventDetails" type="tns:eventDetails"/>
+    <xs:complexType name="eventDetails">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orderId" type="xs:string"/>
+            <xs:element minOccurs="0" name="event">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Dispatched"/>
+                        <xs:enumeration value="Arrived"/>
+                        <xs:enumeration value="Delivered"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="eventMessage" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

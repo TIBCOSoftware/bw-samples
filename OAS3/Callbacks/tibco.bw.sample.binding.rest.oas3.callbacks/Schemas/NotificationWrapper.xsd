@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/NotificationWrapper" xmlns:tns="http://www.example.org/NotificationWrapper" elementFormDefault="qualified" xmlns:Q1="/T1636825686391Converted/JsonSchema">
+    <import namespace="/T1636825686391Converted/JsonSchema"></import>
+    <complexType name="NotificationWrapperType">
+    	<complexContent>
+    		<extension base="Q1:Notification">
+    			<sequence>
+    				<element name="notificationEvent" type="string"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    <element name="NotificationWrapper" type="tns:NotificationWrapperType"/>
+</schema>

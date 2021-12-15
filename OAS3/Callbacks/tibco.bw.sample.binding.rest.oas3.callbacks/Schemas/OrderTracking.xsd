@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/OrderTracking" xmlns:tns="http://www.example.org/OrderTracking" elementFormDefault="qualified" xmlns:Q1="/T1636825686391Converted/JsonSchema">
+    <import namespace="/T1636825686391Converted/JsonSchema"></import>
+    <complexType name="OrderRegistryType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="OrderRecord"
+				type="tns:OrderRecordType" nillable="true" />
+		</sequence>
+	</complexType>
+    <complexType name="OrderRecordType">
+    	<complexContent>
+    		<extension base="Q1:Order">
+    			<sequence>
+	    			<element name="orderId" type="tns:orderIdType"/>
+					<element name="stateOfOrder">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="Booked"></enumeration>
+								<enumeration value="Dispatched"></enumeration>
+								<enumeration value="Arrived"></enumeration>
+								<enumeration value="Delivered"></enumeration>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="lastUpdatedTimestamp" type="dateTime" />
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    <simpleType name="orderIdType">
+    	<restriction base="string"/>
+    </simpleType>
+    <element name="OrderRegistry" type="tns:OrderRegistryType"/>
+	<element name="OrderRecord" type="tns:OrderRecordType"/>
+	<element name="OrderId" type="tns:orderIdType"/>
+</schema>

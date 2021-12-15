@@ -1,0 +1,251 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"version": "1.0",
+		"title": "Order booking service",
+		"description": "This service helps book an order"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8085/"
+		}
+	],
+	"paths": {
+		"/place-order": {
+			"post": {
+				"summary": "postResource",
+				"description": "postResource",
+				"operationId": "post-resource",
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Order"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "response for booked order",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/OrderResponseBody"
+								}
+							}
+						}
+					}
+				},
+				"callbacks": {
+					"onDispatch": {
+						"http://localhost:8095/callback/dispatch": {
+							"post": {
+								"description": "invoked when order is dispatched",
+								"parameters": [],
+								"requestBody": {
+									"content": {
+										"application/json": {
+											"schema": {
+												"$ref": "#/components/schemas/Notification"
+											}
+										}
+									}
+								},
+								"responses": {
+									"200": {
+										"description": "notification response for order dispatch",
+										"content": {
+											"application/json": {
+												"schema": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"onArrival": {
+						"http://localhost:8095/callback/arrive": {
+							"post": {
+								"description": "invoked when order is arrived at some checkpoint",
+								"parameters": [],
+								"requestBody": {
+									"content": {
+										"application/json": {
+											"schema": {
+												"$ref": "#/components/schemas/Notification"
+											}
+										}
+									}
+								},
+								"responses": {
+									"200": {
+										"description": "notification response for order arrival at checkpoint",
+										"content": {
+											"application/json": {
+												"schema": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"onDeliver": {
+						"http://localhost:8095/callback/deliver": {
+							"post": {
+								"description": "invoked when order is delivered to destination",
+								"parameters": [],
+								"requestBody": {
+									"content": {
+										"application/json": {
+											"schema": {
+												"$ref": "#/components/schemas/Notification"
+											}
+										}
+									}
+								},
+								"responses": {
+									"200": {
+										"description": "notification response for order delivered at destination",
+										"content": {
+											"application/json": {
+												"schema": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Location": {
+				"type": "object",
+				"required": [
+					"zip"
+				],
+				"properties": {
+					"city": {
+						"type": "string"
+					},
+					"state": {
+						"type": "string"
+					},
+					"zip": {
+						"type": "string"
+					}
+				}
+			},
+			"Customer": {
+				"type": "object",
+				"required": [
+					"name",
+					"email",
+					"phoneNumber"
+				],
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"phoneNumber": {
+						"type": "string"
+					}
+				}
+			},
+			"Order": {
+				"type": "object",
+				"required": [
+					"productName",
+					"price",
+					"quantity",
+					"destination",
+					"customerInfo"
+				],
+				"properties": {
+					"productName": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number",
+						"format": "float"
+					},
+					"quantity": {
+						"type": "integer",
+						"format": "int32",
+						"minimum": 1
+					},
+					"destination": {
+						"$ref": "#/components/schemas/Location"
+					},
+					"customerInfo": {
+						"$ref": "#/components/schemas/Customer"
+					}
+				}
+			},
+			"OrderResponseBody": {
+				"type": "object",
+				"required": [
+					"orderId",
+					"orderMessage",
+					"orderDetails"
+				],
+				"properties": {
+					"orderId": {
+						"type": "string"
+					},
+					"orderMessage": {
+						"type": "string"
+					},
+					"orderDetails": {
+						"$ref": "#/components/schemas/Order"
+					}
+				}
+			},
+			"Notification": {
+				"type": "object",
+				"required": [
+					"notificationId",
+					"timestamp",
+					"eventMessage",
+					"orderId",
+					"orderToNotify"
+				],
+				"properties": {
+					"notificationId": {
+						"type": "string"
+					},
+					"timestamp": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"eventMessage": {
+						"type": "string"
+					},
+					"orderId": {
+						"type": "string"
+					},
+					"orderToNotify": {
+						"$ref": "#/components/schemas/Order"
+					}
+				}
+			}
+		}
+	}
+}

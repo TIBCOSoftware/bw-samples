@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_oqzKYELwEeyrAsbUzCRICw" targetNamespace="http://tns.tibco.com/bw/composite/tibco.bw.sample.binding.rest.oas3.callbacks" name="tibco.bw.sample.binding.rest.oas3.callbacks" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_E5fFYkSsEeykvcA6Plr5Kw" name="callback-dispatch" promote="ComponentOrderNotificationCallbackService/callback-dispatch">
+    <sca:interface.wsdl xmi:id="_E5fFZkSsEeykvcA6Plr5Kw" interface="http://xmlns.example.com/20211113233334PLT#wsdl.interface(callback-dispatch)" scaext:wsdlLocation="../Processes/tibco/bw/sample/binding/rest/openapi3/callbacks/OrderNotificationCallbackService.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_E5jW0ESsEeykvcA6Plr5Kw" name="RestService2" path="/callback/dispatch" docBasePath="http://localhost:7777/tibco.bw.sample.binding.rest.oas3.callbacks" docResourcePath="Callback-dispatch" basePath="/" connector="tibco.bw.sample.binding.rest.openapi3.callbacks.resources.NotificationCallbackService" structuredData="true" technologyVersion="3.0.0" implementation="Service Descriptors/tibco.bw.sample.binding.rest.openapi3.orderBooking.json">
+      <operation xmi:id="_E5oPUESsEeykvcA6Plr5Kw" operationName="post" httpMethod="POST" notes="invoked when order is dispatched" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_E5rSoESsEeykvcA6Plr5Kw"/>
+      <advancedConfig xmi:id="_E5jW0USsEeykvcA6Plr5Kw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_E5oPUUSsEeykvcA6Plr5Kw" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_Nclu4kSsEeykvcA6Plr5Kw" name="callback-arrive" promote="ComponentOrderNotificationCallbackService/callback-arrive">
+    <sca:interface.wsdl xmi:id="_NcmV80SsEeykvcA6Plr5Kw" interface="http://xmlns.example.com/20211113233334PLT#wsdl.interface(callback-arrive)" scaext:wsdlLocation="../Processes/tibco/bw/sample/binding/rest/openapi3/callbacks/OrderNotificationCallbackService.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Ncu40ESsEeykvcA6Plr5Kw" name="RestService3" path="/callback/arrive" docBasePath="http://localhost:7777/tibco.bw.sample.binding.rest.oas3.callbacks" docResourcePath="Callback-dispatch" basePath="/" connector="tibco.bw.sample.binding.rest.openapi3.callbacks.resources.NotificationCallbackService" structuredData="true" technologyVersion="3.0.0" implementation="Service Descriptors/tibco.bw.sample.binding.rest.openapi3.orderBooking.json">
+      <operation xmi:id="_Nc3bsESsEeykvcA6Plr5Kw" operationName="post" httpMethod="POST" notes="invoked when order is arrived at some checkpoint" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_Nc7tIESsEeykvcA6Plr5Kw"/>
+      <advancedConfig xmi:id="_Ncu40USsEeykvcA6Plr5Kw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Nc3bsUSsEeykvcA6Plr5Kw" bindingName="RestService3"/>
+  </sca:service>
+  <sca:service xmi:id="_R3aUYkSsEeykvcA6Plr5Kw" name="callback-deliver" promote="ComponentOrderNotificationCallbackService/callback-deliver">
+    <sca:interface.wsdl xmi:id="_R3aUZkSsEeykvcA6Plr5Kw" interface="http://xmlns.example.com/20211113233334PLT#wsdl.interface(callback-deliver)" scaext:wsdlLocation="../Processes/tibco/bw/sample/binding/rest/openapi3/callbacks/OrderNotificationCallbackService.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_R3jeUESsEeykvcA6Plr5Kw" name="RestService4" path="/callback/deliver" docBasePath="http://localhost:7777/tibco.bw.sample.binding.rest.oas3.callbacks" docResourcePath="Callback-dispatch" basePath="/" connector="tibco.bw.sample.binding.rest.openapi3.callbacks.resources.NotificationCallbackService" structuredData="true" technologyVersion="3.0.0" implementation="Service Descriptors/tibco.bw.sample.binding.rest.openapi3.orderBooking.json">
+      <operation xmi:id="_R3o94ESsEeykvcA6Plr5Kw" operationName="post" httpMethod="POST" notes="invoked when order is delivered to destination" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_R3sBMESsEeykvcA6Plr5Kw"/>
+      <advancedConfig xmi:id="_R3jeUUSsEeykvcA6Plr5Kw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_R3o94USsEeykvcA6Plr5Kw" bindingName="RestService4"/>
+  </sca:service>
+  <sca:service xmi:id="_yiO6EUTTEeyjHr2FEO9RRA" name="notifier" promote="ComponentProcess/notifier">
+    <sca:interface.wsdl xmi:id="_yiO6FUTTEeyjHr2FEO9RRA" interface="http://xmlns.example.com/20211114041612PLT#wsdl.interface(notifier)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_yicVcETTEeyjHr2FEO9RRA" name="RestService" path="/notifier" docBasePath="http://localhost:7777/tibco.bw.sample.binding.rest.oas3.callbacks" docResourcePath="Notifier" basePath="/" connector="tibco.bw.sample.binding.rest.openapi3.callbacks.resources.NotifierService" structuredData="true" technologyVersion="3.0.0" implementation="Service Descriptors/tibco.bw.sample.binding.rest.openapi3.notifier.json">
+      <operation xmi:id="_yif_0ETTEeyjHr2FEO9RRA" operationName="post" nickname="post-resource" httpMethod="POST" notes="postResource" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_yiicEETTEeyjHr2FEO9RRA"/>
+      <advancedConfig xmi:id="_yicVcUTTEeyjHr2FEO9RRA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_yif_0UTTEeyjHr2FEO9RRA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_XX650EYQEeyjHr2FEO9RRA" name="place-order" promote="ComponentOrderBookService/place-order">
+    <sca:interface.wsdl xmi:id="_XX651EYQEeyjHr2FEO9RRA" interface="http://xmlns.example.com/20211115180234PLT#wsdl.interface(place-order)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_XX9WEEYQEeyjHr2FEO9RRA" name="RestService5" path="/place-order" docBasePath="http://localhost:7777/tibco.bw.sample.binding.rest.oas3.callbacks" docResourcePath="Place-order" basePath="/" connector="tibco.bw.sample.binding.rest.openapi3.callbacks.resources.OrderBookingService" structuredData="true" technologyVersion="3.0.0" implementation="Service Descriptors/tibco.bw.sample.binding.rest.openapi3.orderBooking.json">
+      <operation xmi:id="_XYAZYEYQEeyjHr2FEO9RRA" operationName="post" nickname="post-resource" httpMethod="POST" notes="postResource" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+        <restSwaggerCallbackGroupList xmi:id="_XbJ0AEYQEeyjHr2FEO9RRA" eventName="onDispatch">
+          <restSwaggerCallbackPathList xmi:id="_XbJ0AUYQEeyjHr2FEO9RRA" url="http://localhost:8095/callback/dispatch">
+            <restSwaggerCallbackOperationList xmi:id="_XbJ0AkYQEeyjHr2FEO9RRA" operationName="post" httpMethod="POST" notes="invoked when order is dispatched" responseStyle="element" requestStyle="element">
+              <clientFormat>application/json</clientFormat>
+              <clientRequestFormat>application/json</clientRequestFormat>
+              <callbackRequestBody xmi:id="_XbJ0A0YQEeyjHr2FEO9RRA" qname="{/T1636825686391Converted/JsonSchema}Notification" properties="null"/>
+              <callbackResponseMessages xmi:id="_XbJ0BEYQEeyjHr2FEO9RRA" statusCode="200" reasonPhrase="notification response for order dispatch" qname="string"/>
+            </restSwaggerCallbackOperationList>
+          </restSwaggerCallbackPathList>
+        </restSwaggerCallbackGroupList>
+        <restSwaggerCallbackGroupList xmi:id="_XbJ0BUYQEeyjHr2FEO9RRA" eventName="onArrival">
+          <restSwaggerCallbackPathList xmi:id="_XbJ0BkYQEeyjHr2FEO9RRA" url="http://localhost:8095/callback/arrive">
+            <restSwaggerCallbackOperationList xmi:id="_XbJ0B0YQEeyjHr2FEO9RRA" operationName="post" httpMethod="POST" notes="invoked when order is arrived at some checkpoint" responseStyle="element" requestStyle="element">
+              <clientFormat>application/json</clientFormat>
+              <clientRequestFormat>application/json</clientRequestFormat>
+              <callbackRequestBody xmi:id="_XbJ0CEYQEeyjHr2FEO9RRA" qname="{/T1636825686391Converted/JsonSchema}Notification" properties="null"/>
+              <callbackResponseMessages xmi:id="_XbJ0CUYQEeyjHr2FEO9RRA" statusCode="200" reasonPhrase="notification response for order arrival at checkpoint" qname="string"/>
+            </restSwaggerCallbackOperationList>
+          </restSwaggerCallbackPathList>
+        </restSwaggerCallbackGroupList>
+        <restSwaggerCallbackGroupList xmi:id="_XbJ0CkYQEeyjHr2FEO9RRA" eventName="onDeliver">
+          <restSwaggerCallbackPathList xmi:id="_XbJ0C0YQEeyjHr2FEO9RRA" url="http://localhost:8095/callback/deliver">
+            <restSwaggerCallbackOperationList xmi:id="_XbJ0DEYQEeyjHr2FEO9RRA" operationName="post" httpMethod="POST" notes="invoked when order is delivered to destination" responseStyle="element" requestStyle="element">
+              <clientFormat>application/json</clientFormat>
+              <clientRequestFormat>application/json</clientRequestFormat>
+              <callbackRequestBody xmi:id="_XbJ0DUYQEeyjHr2FEO9RRA" qname="{/T1636825686391Converted/JsonSchema}Notification" properties="null"/>
+              <callbackResponseMessages xmi:id="_XbJ0DkYQEeyjHr2FEO9RRA" statusCode="200" reasonPhrase="notification response for order delivered at destination" qname="string"/>
+            </restSwaggerCallbackOperationList>
+          </restSwaggerCallbackPathList>
+        </restSwaggerCallbackGroupList>
+      </operation>
+      <parameters xmi:id="_XYCOkEYQEeyjHr2FEO9RRA"/>
+      <advancedConfig xmi:id="_XX9WEUYQEeyjHr2FEO9RRA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_XYAZYUYQEeyjHr2FEO9RRA" bindingName="RestService5"/>
+  </sca:service>
+  <sca:property xmi:id="_qXqU0ELwEeyrAsbUzCRICw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qZzp4ELwEeyrAsbUzCRICw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qbu8gELwEeyrAsbUzCRICw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qdczwELwEeyrAsbUzCRICw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qfbwwELwEeyrAsbUzCRICw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qigS4ELwEeyrAsbUzCRICw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qlEesELwEeyrAsbUzCRICw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qmk6kELwEeyrAsbUzCRICw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qoC6MELwEeyrAsbUzCRICw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_BIrtQESsEeykvcA6Plr5Kw" name="ComponentOrderNotificationCallbackService" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_BIrtQUSsEeykvcA6Plr5Kw" processName="tibco.bw.sample.binding.rest.openapi3.callback.service.OrderNotificationCallbackService"/>
+    <sca:service xmi:id="_E5fFYESsEeykvcA6Plr5Kw" name="callback-dispatch">
+      <sca:interface.wsdl xmi:id="_E5fFYUSsEeykvcA6Plr5Kw" interface="http://xmlns.example.com/20211113233334PLT#wsdl.interface(callback-dispatch)"/>
+    </sca:service>
+    <sca:service xmi:id="_Nclu4ESsEeykvcA6Plr5Kw" name="callback-arrive">
+      <sca:interface.wsdl xmi:id="_Nclu4USsEeykvcA6Plr5Kw" interface="http://xmlns.example.com/20211113233334PLT#wsdl.interface(callback-arrive)"/>
+    </sca:service>
+    <sca:service xmi:id="_R3aUYESsEeykvcA6Plr5Kw" name="callback-deliver">
+      <sca:interface.wsdl xmi:id="_R3aUYUSsEeykvcA6Plr5Kw" interface="http://xmlns.example.com/20211113233334PLT#wsdl.interface(callback-deliver)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_gG0HoETTEeyjHr2FEO9RRA" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gG0HoUTTEeyjHr2FEO9RRA" processName="tibco.bw.sample.binding.rest.openapi3.notifier.NotifierService"/>
+    <sca:service xmi:id="_yiOTAETTEeyjHr2FEO9RRA" name="notifier">
+      <sca:interface.wsdl xmi:id="_yiO6EETTEeyjHr2FEO9RRA" interface="http://xmlns.example.com/20211114041612PLT#wsdl.interface(notifier)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_HA2kwEYQEeyjHr2FEO9RRA" name="ComponentOrderBookService" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_HA2kwUYQEeyjHr2FEO9RRA" processName="tibco.bw.sample.binding.rest.openapi3.placeorder.OrderBookingService"/>
+    <sca:service xmi:id="_XX6SwEYQEeyjHr2FEO9RRA" name="place-order">
+      <sca:interface.wsdl xmi:id="_XX6SwUYQEeyjHr2FEO9RRA" interface="http://xmlns.example.com/20211115180234PLT#wsdl.interface(place-order)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_RqQvQEYXEeyjHr2FEO9RRA" name="ComponentOrderBookClient" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_RqQvQUYXEeyjHr2FEO9RRA" processName="tibco.bw.sample.binding.rest.openapi3.placeorder.client.OrderBookClient"/>
+  </sca:component>
+</sca:composite>

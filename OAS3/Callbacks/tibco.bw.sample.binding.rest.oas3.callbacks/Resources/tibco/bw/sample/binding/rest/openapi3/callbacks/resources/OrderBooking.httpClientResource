@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_Z8PMgUYXEeyjHr2FEO9RRA" name="tibco.bw.sample.binding.rest.openapi3.callbacks.resources.OrderBooking" type="http:HttpClientConfiguration">
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_Z8PMgkYXEeyjHr2FEO9RRA" httpClientVersion="httpcomponents">
+    <tcpDetails xmi:id="_Z8PMg0YXEeyjHr2FEO9RRA" port="8085"/>
+  </jndi:configuration>
+</jndi:namedResource>

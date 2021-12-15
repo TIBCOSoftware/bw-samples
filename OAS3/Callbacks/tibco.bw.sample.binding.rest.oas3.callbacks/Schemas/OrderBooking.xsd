@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:tns="/T1636825686391Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/T1636825686391Converted/JsonSchema">
+          
+  
+  
+  <xs:element name="Customer" type="tns:Customer"/>
+          
+  
+  
+  <xs:complexType name="Customer">
+                    
+    
+    
+    <xs:sequence>
+                              
+      
+      
+      <xs:element name="name" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="email" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="phoneNumber" type="xs:string"/>
+                          
+    
+    
+    </xs:sequence>
+                
+  
+  
+  </xs:complexType>
+          
+  
+  
+  <xs:element name="OrderResponseBody" type="tns:OrderResponseBody"/>
+          
+  
+  
+  <xs:complexType name="OrderResponseBody">
+                    
+    
+    
+    <xs:sequence>
+                              
+      
+      
+      <xs:element name="orderId" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="orderMessage" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="orderDetails" type="tns:Order"/>
+                          
+    
+    
+    </xs:sequence>
+                
+  
+  
+  </xs:complexType>
+          
+  
+  
+  <xs:element name="Notification" type="tns:Notification"/>
+          
+  
+  
+  <xs:complexType name="Notification">
+                    
+    
+    
+    <xs:sequence>
+                              
+      
+      
+      <xs:element name="notificationId" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="timestamp" type="xs:dateTime"/>
+                              
+      
+      
+      <xs:element name="eventMessage" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="orderId" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="orderToNotify" type="tns:Order"/>
+                              
+      
+                    
+    
+    
+    </xs:sequence>
+                
+  
+  
+  </xs:complexType>
+          
+  
+  
+  <xs:element name="Location" type="tns:Location"/>
+          
+  
+  
+  <xs:complexType name="Location">
+                    
+    
+    
+    <xs:sequence>
+                              
+      
+      
+      <xs:element minOccurs="0" name="city" type="xs:string"/>
+                              
+      
+      
+      <xs:element minOccurs="0" name="state" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="zip" type="xs:string"/>
+                          
+    
+    
+    </xs:sequence>
+                
+  
+  
+  </xs:complexType>
+          
+  
+  
+  <xs:element name="Order" type="tns:Order"/>
+          
+  
+  
+  <xs:complexType name="Order">
+                    
+    
+    
+    <xs:sequence>
+                              
+      
+      
+      <xs:element name="productName" type="xs:string"/>
+                              
+      
+      
+      <xs:element name="price" type="xs:float"/>
+                              
+      
+      
+      <xs:element name="quantity">
+                                        
+        
+        
+        <xs:simpleType>
+                                                  
+          
+          
+          <xs:restriction base="xs:int">
+                                                            
+            
+            
+            <xs:minInclusive value="1"/>
+                                                        
+          
+          
+          </xs:restriction>
+                                              
+        
+        
+        </xs:simpleType>
+                                    
+      
+      
+      </xs:element>
+                              
+      
+      
+      <xs:element name="destination" type="tns:Location"/>
+                              
+      
+      
+      <xs:element name="customerInfo" type="tns:Customer"/>
+                          
+    
+    
+    </xs:sequence>
+                
+  
+  
+  </xs:complexType>
+      
+
+
+</xs:schema>

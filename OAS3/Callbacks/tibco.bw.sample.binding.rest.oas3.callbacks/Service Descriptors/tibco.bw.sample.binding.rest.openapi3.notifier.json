@@ -1,0 +1,68 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"version": "1.0",
+		"title": "Notifier service",
+		"description": "This service helps invoke a notification"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8075/"
+		}
+	],
+	"paths": {
+		"/notifier": {
+			"post": {
+				"summary": "postResource",
+				"description": "postResource",
+				"operationId": "post-resource",
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								 "$ref" : "#/components/schemas/eventDetails"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "notification invoked",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"eventDetails": {
+				"type": "object",
+				"properties": {
+					"orderId": {
+						"type": "string"
+					},
+					"event": {
+						"type": "string",
+						"enum": [
+							"Dispatched",
+							"Arrived",
+							"Delivered"
+						]
+					},
+					"eventMessage": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
