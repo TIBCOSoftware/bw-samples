@@ -14,7 +14,7 @@ BW 6.8.0 provides below functionalities in subject to OAS3 Callbacks :
 This sample is about a simple order management workflow, where an order can be booked and the order processing related events will trigger notifications to callback service endpoints. The spec **_tibco.bw.sample.binding.rest.openapi3.orderBooking.json_** contains _/place-order_ path that has _POST_ operation configured with callbacks with 3 events as follows
 
 - onDispatch
-- onArrive
+- onArrival
 - onDeliver
 
 The tree view in the below image can show the parsed swagger spec. The callback URLs have been dragged and dropped to create the Service and Reference bindings for the order booking and the callback processes. 
